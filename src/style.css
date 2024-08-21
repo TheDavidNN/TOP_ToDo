@@ -15,6 +15,8 @@ body {
   left: 0;
   background-color: antiquewhite;
   overflow-x: hidden;
+  display: grid;
+  grid-template-rows: 1fr 10fr 3fr;
 }
 
 #sidenav-top {
@@ -39,6 +41,21 @@ body {
   padding: 0px;
 }
 
+#open-form-btn{
+  border:none;
+  font-size: calc(2rem + 1vw);
+  margin: auto;
+  width: calc(3.5rem + 1vw);
+  height: calc(3.5rem + 1vw);
+  border-radius: 50%;
+  cursor:pointer;
+  transition: all 0.3s ease;
+  &:hover{
+    transform: scale(1.1);
+    filter: brightness(0.9)
+  }
+}
+
 #projects-container {
   list-style-type: none;
   padding: 16px;
@@ -57,4 +74,33 @@ body {
 
 #tasks-container {
   margin: 64px 32px;
+}
+
+#project-dialog{
+  opacity: 0;
+  transform: scale(0);
+  position: fixed;
+  top: 50%;
+  left:50%;
+  height: 50%;
+  width: 50%;
+
+  transition: all 0.4s ease;
+}
+
+#project-dialog[open]{
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+
+}
+
+#project-dialog[open]::backdrop{
+  backdrop-filter: blur(5px);
+}
+
+#project-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4px;
 }

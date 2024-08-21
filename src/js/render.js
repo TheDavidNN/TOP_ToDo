@@ -1,13 +1,17 @@
 import model from "./model.js"
 import projectsContainer from "./projectsContainer.js";
 import tasksContainer from "./tasksContainer.js";
+import formHandler from "./formHandler.js";
 
 const render = (function () {
     const projectsElement = document.querySelector("#projects-container");
     const tasksElement = document.querySelector("#tasks-container");
+    const projectFormElement = document.querySelector("#project-form");
 
     const init = () => {
         model.init();
+        formHandler.init();
+        //projectFormElement.showModal();
     }
 
     const renderProjects = () => {

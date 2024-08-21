@@ -11,6 +11,9 @@ const tasksContainer = (function () {
 
     const getNoProjectElement = () => {
         let noProjectElement = document.createElement("div");
+        noProjectElement.innerHTML = `
+        <p>No project selected</p>
+        `;
         return noProjectElement;
     };
 
