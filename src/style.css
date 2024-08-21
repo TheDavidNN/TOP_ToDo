@@ -1,6 +1,14 @@
+* {
+  margin: 0;
+}
+
+body {
+  --sidebar-width: 200px;
+}
+
 #sidenav {
   height: 100%;
-  width: 200px;
+  width: var(--sidebar-width);
   position: fixed;
   z-index: 1;
   top: 0;
@@ -31,16 +39,22 @@
   padding: 0px;
 }
 
-#projects-list {
+#projects-container {
   list-style-type: none;
   padding: 16px;
 }
 
-#projects-list li {
+#projects-container li {
   cursor: pointer;
   padding: 8px 0px;
 }
 
 #content {
-  background-color: whitesmoke;
+  margin-left: var(--sidebar-width);
+  height: 100vh;
+  background-color: #fefefe;
+}
+
+#tasks-container {
+  margin: 64px 32px;
 }
